@@ -1,0 +1,21 @@
+<?php include 'header.html'?>
+<nav class="navbar navbar-inverse"></nav>
+<div class="container">
+    <input type="hidden" value="<?php echo $url?>">
+    <div class="alert alert-danger" role="alert">
+        <?php echo $html?> <span class="time">3</span> <a href="<?php echo $url?>">点击立即返回</a>
+    </div>
+</div>
+<script>
+    $(function () {
+        var i=3;
+        var timer = setInterval(function () {
+            i--;
+            $('.time').text(i);
+            if(i === 0){
+                location.href = $('input').val();
+            }
+        },1000)
+    })
+</script>
+<?php include 'footer.html'?>

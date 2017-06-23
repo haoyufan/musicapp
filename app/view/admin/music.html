@@ -1,0 +1,39 @@
+<?php include 'header.html';?>
+<?php include 'nav.html'?>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title text-center">歌曲信息</div>
+        </div>
+        <div class="panel-body text-center">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>歌曲</th>
+                    <th>歌手</th>
+                    <th>链接</th>
+                    <th>下载</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($list as $k =>$v):?>
+                <tr>
+                        <th scope="row"><?php echo $v['id']?></th>
+                        <td><?php echo $v['m_name'] ?></td>
+                        <td><?php echo $v['a_name']?></td>
+                        <td><a href="/index.php/index?album_id=<?php echo $v['id']?>" target="_blank">添加到播放列表</a></td>
+                        <td>
+                            <a href="<?php echo $v['src']?>" target="_blank">点击试听</a>|
+                            <a href="/index.php/admin/dalete_music?music_id=<?php echo $v['id']?>&album_id=<?php echo $_GET['album_id']?>">删除</a>
+                            <!--<a href="/index.php/admin/update_music?music_id=<?php echo $v['id']?>" target="_blank">修改</a></td>-->
+                    </tr>
+                <?php endforeach?>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-info btn-lg" style="margin:0 auto;" id="click"><a href="/index.php/admin/add_music?album_id=<?php echo isset($_GET['album_id']) ?$_GET['album_id'] : 1?>" style="color:#fff;">添加音乐</a></button>
+
+        </div>
+    </div>
+</div>
+<?php include 'footer.html';?>

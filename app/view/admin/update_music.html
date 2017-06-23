@@ -1,0 +1,40 @@
+<?php include 'header.html';?>
+<?php include 'nav.html'?>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title text-center">login</div>
+        </div>
+        <div class="panel-body">
+            <form action="/index.php/admin/_add_music" method="post" class="text-center">
+                <input type="hidden" name="id" value="<?php echo $data['id']?>">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1">歌曲名字</span>
+                    <input type="text" class="form-control" placeholder="歌曲名字" aria-describedby="basic-addon1" name="name" value="<?php echo $data['m_name']?>">
+                </div>
+
+                <fieldset disabled></fieldset>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon3">专辑名字</span>
+                    <input type="text" class="form-control" placeholder="专辑名字" aria-describedby="basic-addon3" name="alume_name" value="<?php echo $data['al_name']?>">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon4">歌手</span>
+                    <input type="text" class="form-control" placeholder="歌手" aria-describedby="basic-addon4" name="albumname" value="<?php echo $data['a_name']?>">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-pencil" id="basic-addon2"></span>
+                    <input type="text" class="form-control" placeholder="文件名" aria-describedby="basic-addon2" name="src" value="<?php echo $data['src']?>">
+                </div>
+
+                <div class="btn-group input-group-lg">
+                    <button type="submit" class="btn btn-primary btn-lg">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php include 'footer.html';?>

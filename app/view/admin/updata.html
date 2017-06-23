@@ -1,0 +1,41 @@
+<?php include 'header.html';?>
+<style>
+    .input-group{
+        margin-bottom: 30px;
+    }
+</style>
+<nav class="navbar navbar-inverse"></nav>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title text-center">add album</div>
+        </div>
+        <div class="panel-body">
+            <?php foreach($list as $k => $v): ?><?php endforeach?>
+            <form action="/index.php/admin/updateAlbumInfo" method="post" class="text-center" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $list['id']?>">
+                <input type="hidden" name="sale" value="<?php echo $list['sale']?>">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon ">专辑</span>
+                    <input type="text" class="form-control" placeholder="name" name="name" value="<?php echo $list['name']?>">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon ">歌手名</span>
+                    <input type="text" class="form-control" placeholder="album_name" name="album_name" value="<?php echo $list['album_name']?>">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon "><img src="<?php echo $list['sale']?>" alt="" width="30" height="30"></span>
+                    <input type="file" class="form-control" placeholder="sale" name="file">
+                </div>
+
+                <div class="btn-group btn-group-lg">
+                    <button type="submit" class="btn btn-primary btn-lg">submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<?php include 'footer.html'?>

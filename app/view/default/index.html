@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- 页面关键词 keywords -->
+    <meta name="keywords" content="keywords">
+    <!-- 页面描述内容 description -->
+    <meta name="description" content="description">
+    <!-- 定义网页作者 author -->
+    <meta name="author" content="author,email address">
+    <!--定义网页搜索引擎索引方式，none，noindex，nofollow，all，index和follow。-->
+    <meta name="robots" content="index,follow">
+    <!-- 设置状态栏的背景颜色，只有在 `"apple-mobile-web-app-capable" content="yes"` 时生效 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <!-- 添加 favicon icon -->
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+    <!-- 静止缩放-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>music</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="<?PHP echo BOOT_PACH;?>/css/bootstrap.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+用引入） -->
+    <link rel="stylesheet" href="<?PHP echo BOOT_PACH;?>/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="<?php echo CSS_PACH?>/base.css">
+    <link rel="stylesheet" href="<?php echo FONT_PACH?>/iconfont.css">
+    <link rel="stylesheet" href="<?php echo CSS_PACH?>/index.css">
+    <link rel="stylesheet" href="<?php echo CSS_PACH?>/mp3.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="<?PHP echo JS_PACH;?>/jquery.js"></script>
+    <script src="<?PHP echo BOOT_PACH;?>/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse" style="position:fixed;top:0">
+        <!--<ul class="nav navbar-nav">
+            <li class=<?php echo $method ==="ablum"?"active":'' ?> ><a href="/index.php/index/cal"><span class="sr-only">(current)</span></a></li>
+        </ul>-->
+        <input type="hidden" id="page" value="<?php echo $num?>">                    
+        <div class="login text-center" >music</div>
+    </nav>
+    <div class="container">
+        <?php foreach($album as $k =>$v):?>
+            <div class="album" data-id="<?php echo $v['id']; ?>">
+                <div class="pic" style="background-image:url('<?php echo $v["sale"]; ?>') "></div>
+                <div class="name"><?php echo $v['album_name']; ?></div>
+                <div class="audio">点击播放</div>
+            </div>
+        <?php endforeach;?>
+    </div>
+    <div class="buttom"></div>
+    <div class="music ">
+        <audio src="<?php echo MUSIC_PACH;?>不在联系.mp3" id="audio" preload></audio>
+        <div id="music">
+            <div class="song">
+                <div class="cole"></div>
+                <div class="sone-con">
+                    <span class="text">-----</span>
+                    <span class="singer">----</span>
+                </div>
+            </div>
+            <!--列表-->
+            <input type="checkbox" id="play">
+            <div id="list">
+                <label for="play">
+                    <div class="alert"></div>
+                </label>
+                <ul class="list">
+                </ul>
+            </div>
+
+            <!--播放圈-->
+            <div class="avatar-title">
+                <div class="avatar"></div>
+            </div>
+            <!--控制台-->
+            <div class="console">
+                <div class="time">
+                    <time>
+                        <span class="curr">00:00</span>
+                    </time>
+                    <div class="duration">
+                        <div class="current">
+                            <div class="cret"></div>
+                        </div>
+                    </div>
+                    <time>
+                        <span class="dura">00:00</span>
+                    </time>
+                </div>
+                <div class="button">
+                    <div class="order iconfont icon-music_repeat_button"></div>
+                    <div class="prav iconfont icon-music_beginning_button"></div>
+                    <div class="play-pause iconfont icon-music_play_button"></div>
+                    <div class="next iconfont icon-music_end_button"></div>
+                    <div class="vouln iconfont icon-music_volume_up"></div>
+                    <div class="vol-sped">
+                        <div class="volumes">
+                            <div class="vol">
+                                <div class="vol_cret"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="<?php echo JS_PACH;?>/index.js"></script>

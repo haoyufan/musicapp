@@ -1,0 +1,31 @@
+<?php include 'header.html';?>
+<?php include 'nav.html'?>
+
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title text-center">login</div>
+        </div>
+        <div class="panel-body">
+            <form action="/index.php/admin/check" method="post" class="text-center" enctype="multipart/form-data">
+
+                <input type="hidden" name="album_id" value="<?php echo $_GET['album_id']?>">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
+                    <input type="text" class="form-control" placeholder="歌曲名字" aria-describedby="basic-addon1" name="name">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon" id="basic-addon2">上传歌曲</span>
+                    <input type="file"  class="form-control" placeholder="file" name="file">
+                </div>
+
+                <div class="btn-group input-group-lg">
+                    <button type="submit" class="btn btn-primary btn-lg">submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php include 'footer.html';?>

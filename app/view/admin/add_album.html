@@ -1,0 +1,33 @@
+<?php include 'header.html';?>
+<?php include 'nav.html'?>
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title text-center">add album</div>
+        </div>
+        <div class="panel-body">
+            <form action="/index.php/admin/_add" method="post" class="text-center" enctype="multipart/form-data">
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-pencil"></span>
+                    <input type="text" class="form-control" placeholder="name" name="name">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-pencil"></span>
+                    <input type="text" class="form-control" placeholder="album_name" name="album_name">
+                </div>
+
+                <div class="input-group input-group-lg">
+                    <input type="file"  class="form-control" placeholder="sale" name="sale">
+                </div>
+
+                <div class="btn-group btn-group-lg">
+                    <button type="submit" class="btn btn-primary btn-lg">submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<?php include 'footer.html'?>

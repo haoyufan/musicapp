@@ -1,0 +1,112 @@
+body.bodys {
+  height: 100%;
+  overflow: hidden; }
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: .75;
+    z-index: 111;
+}
+  .navbar .login {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: 'Dancing Script', cursive; }
+
+.container {
+  padding: 0;
+  width: 100%; }
+
+.album {
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+  .album .pic {
+    width: 100%;
+    height: 90vh;
+    background: center/cover no-repeat; }
+  .album .name {
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    line-height: 2.5;
+    font-size: 24px;
+    font-family: 'Dancing Script', 'Consolas', "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  .album .audio.mouse {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    bottom:0;
+    margin:auto;}
+
+.buttom {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 111 !important;
+  background: url(/static/img/music.svg) no-repeat center/cover; }
+
+.button.run {
+  animation: run 0.5s  linear both; }
+
+@keyframes run {
+  0% {
+    transform: translate(0, 0); }
+  25% {
+    transform: translate(0, -25%); }
+  50% {
+    transform: translate(0, 0); }
+  75% {
+    transform: translate(0, -25%); }
+  100% {
+    transform: translate(0, 0); } }
+
+.music {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  margin: auto;
+  background: url(/static/img/banner.jpg) center/cover no-repeat; }
+
+#music {
+  visibility: hidden;
+  opacity: 0; }
+
+.music.active {
+  width:100%;
+  height: 100%;
+  animation: fadeInUp 0.5s ease; }
+  .music.active #music {
+    visibility: visible;
+    opacity: 1; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }

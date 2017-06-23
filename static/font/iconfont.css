@@ -1,0 +1,37 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1490063083513'); /* IE9*/
+  src: url('iconfont.eot?t=1490063083513#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1490063083513') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1490063083513') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1490063083513#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-music_beginning_button:before { content: "\e611"; }
+
+.icon-music_end_button:before { content: "\e613"; }
+
+.icon-music_mute:before { content: "\e618"; }
+
+.icon-music_pause_button:before { content: "\e619"; }
+
+.icon-music_play_button:before { content: "\e61a"; }
+
+.icon-music_repeat_button:before { content: "\e61d"; }
+
+.icon-music_shuffle_button:before { content: "\e61e"; }
+
+.icon-music_rewind_button:before { content: "\e61f"; }
+
+.icon-music_stop_button:before { content: "\e620"; }
+
+.icon-music_volume_up:before { content: "\e621"; }
+

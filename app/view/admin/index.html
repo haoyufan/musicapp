@@ -1,0 +1,43 @@
+<?php include 'header.html';?>
+<?php include 'nav.html'?>
+<div class="container">
+    <div class="panel panel panel-info">
+    <div class="panel-heading">
+        <div class="panel-title text-center">专辑</div>
+    </div>
+    <div class="panel-body text-center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>专辑</th>
+                <th>歌手名</th>
+                <th>销量</th>
+                <th>详情</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($album as $k =>$v):?>
+            <tr>
+                <th scope="row"><?php echo $v['id']?></th>
+                <td><?php echo $v['album_name'] ?></td>
+                <td><?php echo $v['name'] ?></td>
+                <td><img src="<?php echo $v['sale']?>" alt="" width="30" height="30"></td>
+                <td><a href="/index.php/admin/music?album_id=<?php echo $v['id']?>">查看详情</a>|<a href="/index.php/admin/delete_album?album_id=<?php echo $v['id']?>">删除</a>|<a href="/index.php/admin/updata_album?album_id=<?php echo $v['id']?>">修改</a></td>
+            </tr>
+            <?php endforeach?>
+            </tbody>
+        </table>
+        <?php echo $html;?>
+        <button type="button" class="btn btn-info btn-lg" style="margin:0 auto;" id="click"><a href="/index.php/admin/add_album" style="color:#fff;">添加专辑</a></button>
+    </div>
+</div>
+</div>
+<?php include 'footer.html';?>
+<script>
+    $('#click').click(function () {
+        $.post({
+            url:'/admin/add_album'
+        })
+    })
+</script>
